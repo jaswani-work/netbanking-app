@@ -1,0 +1,12 @@
+{
+  "name": "netbanking-mfe-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix shared-state && npm install --prefix host-shell && npm install --prefix signin-mfe && npm install --prefix accounts-mfe && npm install --prefix transfer-mfe",
+    "start": "concurrently -n shared,host,signin,accounts,transfer -c blue,green,yellow,magenta,cyan \"npm start --prefix shared-state\" \"npm start --prefix host-shell\" \"npm start --prefix signin-mfe\" \"npm start --prefix accounts-mfe\" \"npm start --prefix transfer-mfe\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
